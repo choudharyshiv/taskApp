@@ -23,16 +23,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.shiv.taskapp.data.TaskData
 import com.shiv.taskapp.presentation.TaskViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddTaskScreen(
+    viewModel: TaskViewModel,
     onNavigateBack: () -> Unit,
 ) {
-    val viewModel = hiltViewModel<TaskViewModel>()
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var titleError by remember { mutableStateOf(false) }

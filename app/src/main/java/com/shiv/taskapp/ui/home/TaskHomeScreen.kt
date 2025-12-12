@@ -23,15 +23,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.shiv.taskapp.presentation.TaskViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TaskHomeScreen(
+    viewModel: TaskViewModel,
     onAddTaskClick: () -> Unit,
 ) {
-    val viewModel = hiltViewModel<TaskViewModel>()
     val tasks by viewModel.myTaskState.collectAsState()
 
     Scaffold(
